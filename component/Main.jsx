@@ -64,14 +64,16 @@ const [dataShow,setDataShow]=useState(null)
       <Animated.View entering={FadeInDown} style={styles.top}>
         <View style={[styles.topBox,storeCategory==="recommended" && styles.active]}>
           <View style={[styles.topLine,storeCategory==="recommended" && styles.activeLine]}></View>
+          <Pressable onPress={()=>call("recommended")}>
           <View  style={{top:"39%",left:"17%"}} >
-            <Pressable onPress={()=>call("recommended")}>
+         
               <View style={{flexDirection:"row",gap:5,alignItems:"center"}}>
           <Feather name="sunrise" size={24} color={storeCategory==="recommended"?"red":"black"} />
           <Text style={{fontWeight:"bold",color:`${storeCategory==="recommended"?"red":"black"}`}}>Morning Workout</Text>
           </View>
-          </Pressable>
+      
           </View>
+          </Pressable>
         </View>
         <Pressable style={[styles.topBoxSmall,storeCategory==="games" && styles.active]}  onPress={()=>call("games")}>
           <View style={[styles.topLineSmall,storeCategory==="games" && styles.activeLine]}></View>
